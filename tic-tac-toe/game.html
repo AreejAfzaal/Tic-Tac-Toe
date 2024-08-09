@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tic-Tac-Toe</title>
+        <link rel="icon" href="/images/favicon.png" type="image/icon type">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Roboto&family=Righteous">
+    </head>
+
+    <body>
+        <!-- Navigation bar -->
+        <div class="navigation-bar">
+            <div class="left-side">
+                <div class="navigation-link">
+                    <img class="logo" src="/images/logo.svg" alt="Logo">
+                </div>
+
+                <div class="navigation-link">
+                    <a href="index.html">Home</a>
+                </div>
+                      
+                <div class="navigation-link active-nav-link">
+                    <a href="game.html">Play Game</a>
+                </div>
+      
+                <div class="navigation-link">
+                    <a href="instructions.html">Instructions</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <h1 id="game-title">Tic-Tac-Toe</h1>
+
+            <!-- Dialog box with form to enter player names -->
+            <div class="modal">
+                <dialog id="userNameDialog">
+                    <form id="playerNameForm">
+                        <p>
+                            <h4 style="text-align: left;">Enter Player Names</h4>
+
+                            <label for="p1name">Player 1 Name:</label>
+                            <input type="text" id="p1name" name="p1name">
+                            <br><br>
+
+                            <label for="p2name">Player 2 Name:</label>
+                            <input type="text" id="p2name" name="p2name">
+
+                            <br><br>
+
+                            <div class="dialog-btn-container">
+                                <button class="submit-btn" type="submit">Save</button>
+                                <button class="reset-btn" type="reset">Reset</button>
+                            </div>
+                        </p>
+                    </form>
+                </dialog>
+            </div>
+
+            <!-- Player names and Gameboard -->        
+            <div class="container">
+                <div class="player-info">
+                    <div class="player-mark"><p id="player1"></p><p>: <span style="color: #B93C60;">O</span></p></div>
+                    <div class="player-mark"><p id="player2"><p>: <span style="color: #28A1A8;">X</span></p></p></div>
+                </div>
+
+                <div class="game-board">
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Win modal opens when a player wins the game -->
+        <div class="win-modal">
+            <dialog id="winDialog">
+                <img src="/images/crown.svg" height=50 width=50>
+                <h4 id="winnerName" style="margin: 0 0 0 0; font-family: 'Righteous'; color:#B83C60;"></h4>
+                <p>is the Tic-Tac-Toe champion</p>
+                <a href="game.html"><button class="restart-btn" style="margin-top: 20px;">Restart Game</button></a>
+            </dialog>
+        </div>
+
+        <!-- Draw modal opens when there is no winner and game is a draw -->
+        <div class="draw-modal">
+            <dialog id="drawDialog">
+                <p id="drawMessage"></p>
+                <a href="game.html"><button class="restart-btn" style="margin-top: 10px;">Restart Game</button></a>
+            </dialog>
+        </div>
+
+        <script src="index.js"></script>
+    </body>
+</html>

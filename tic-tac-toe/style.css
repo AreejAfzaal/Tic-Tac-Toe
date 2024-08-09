@@ -1,0 +1,353 @@
+body {
+    background-image: url('/images/background.png');
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    overflow-y: clip;
+    overscroll-behavior: none;
+}
+
+.logo {
+    height: 70px;
+    width: 130px;
+}
+
+.navigation-bar {
+    top: 0;
+    z-index: 100;
+    position: sticky;
+    background-color: white;
+    padding: 30px;
+}
+
+.left-side {
+    display: flex;
+}
+
+.navigation-bar > .left-side > div {
+    display: flex;
+    margin-right: 20px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.navigation-link {
+    height: 22px;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom 0.5s;
+    display: flex;
+    align-items: center;
+}
+
+.active-nav-link {
+    border-bottom: 1px solid #6B2C71;
+}
+
+.active-nav-link a {
+    color: #6B2C71 !important;
+}
+
+.navigation-link a {
+    color: #8a8a8a;
+    text-decoration: none;
+    transition: color 0.5s;
+}
+
+.navigation-link:hover {
+    border-bottom: 1px solid #6B2C71;
+}
+
+.navigation-link a:hover {
+    color: #6B2C71;
+}
+
+.main-content {
+    text-align: center;
+    align-items: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+h1 {
+    font-size: 50px;
+    color: #6B2C71;
+    margin: 0;
+    font-family: 'Fredoka One';
+    font-weight: bolder;
+}
+
+h2 {
+    margin-top: 0;
+    margin-bottom: 70px;
+    font-size: 35px;
+    font-family: 'Roboto';
+    font-weight: lighter;
+    color: #4C4C4C;
+}
+
+h3 {
+    font-size: 25px;
+    font-family: 'Roboto';
+    font-weight: 400;
+}
+
+h4 {
+    font-size: 20px;
+    font-family: 'Roboto';
+    font-weight: 400;
+}
+
+.dashboard-img {
+    position: relative;
+    width: 450px;
+    height: 500px;
+}
+
+.game-mode-btn {
+    color: white;
+    background-color: #B83C60;
+    border: #B83C60;
+    font-size: large;
+    font-family: 'Roboto';
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 8px;
+    height: 50px;
+    width: 230px;
+    cursor: pointer;
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 150px);
+    grid-template-rows: repeat(3, 150px);
+    align-self: center;
+    color: #ED692E;
+}
+
+.game-board div {
+    outline: 1px solid;
+    border-style: solid;
+    border-width: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-color: #ED692E; 
+}
+
+.container {
+    height: calc(100vh - 25vh); /* Adjust based on the height of the h1 and spacing */
+}
+
+ul {
+    font-family: 'Roboto';
+    font-weight: 200;
+    position: relative;
+    list-style: none;
+    text-align: left; 
+    margin: 0 auto; 
+    font-size: 25px;
+}
+
+li {
+    margin-top: 20px;
+}
+
+ul li:nth-child(odd):before {
+    font-family: 'Rubik Wet Paint';
+    content: 'x';
+    color: #ED692E;
+    position: absolute;
+    left: 0;
+}
+
+ul li:nth-child(even):before {
+    font-family: 'Rubik Wet Paint';
+    content: 'o';
+    color: #ED692E;
+    position: absolute;
+    left: 0;
+}
+
+ul + p {
+    font-family: 'Rubik Wet Paint';
+    color: #B83C60;
+    text-align: left;
+    font-size: 30px;
+    margin-top: 50px;
+}
+
+.primary-btn {
+    background-color: #6B2C71;
+    border: #6B2C71;
+    color: white;
+    font-family: 'Roboto';
+    border-radius: 8px;
+    height: 50px;
+    width: 230px;
+    cursor: pointer;
+    font-size: 20px;
+    margin-top: 25px;
+}
+
+dialog {
+    border-radius: 20px;
+    border: none;
+    box-shadow: 2px 2px 20px #797979;
+}
+
+dialog::backdrop {
+    background: rgba(0,0,0,0.5);
+}
+
+label:nth-of-type(1) {
+    font-family: 'Roboto';
+    color: #ED692E;
+    font-size: 16px;
+}
+
+label:nth-of-type(2) {
+    font-family: 'Roboto';
+    color: #28A1A8;
+    font-size: 16px;
+}
+
+.dialog-btn-container {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+.submit-btn {
+    background-color: #ED692E;
+    color: white;
+    border: none;
+    width: 100px;
+    height: 35px;
+    font-family: 'Roboto';
+    font-size: 14px;
+    border-radius: 5px; 
+}
+
+.reset-btn {
+    background-color: white;
+    color: #ED692E;
+    border: 1px solid #ED692E;
+    width: 100px;
+    height: 35px;
+    font-family: 'Roboto';
+    font-size: 14px;
+    border-radius: 5px; 
+}
+
+input {
+    background-color: #F3F3F3;
+    border: none;
+    border-radius: 15px;
+    height: 30px;
+    width: 200px;
+    box-shadow: 2px 2px 10px #E7E7E7 inset;
+    font-size: 16px;
+    padding: 2px 15px;
+}
+
+.game-board {
+    font-family: 'Roboto';
+    font-size: 40px;
+    font-weight: bolder;
+}
+
+.cell {
+    outline: 1px solid;
+    border-style: solid;
+    border-width: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    font-size: 40px;
+    font-weight: bolder;
+    color: #ED692E; 
+    border-color: #ED692E;
+}
+
+.cell.win {
+    background-color: #F3D9CD; 
+}
+
+.cell::before {
+    content: attr(data-hover);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+    display: none;
+}
+
+.cell:hover::before {
+    display: block;
+}
+
+.cell[data-hover='O']::before {
+    color: #D99EAF; 
+    content: 'O';
+}
+
+.cell[data-hover='X']::before {
+    color: #95CED1; 
+    content: 'X';
+}
+
+#winDialog {
+    display: flex;
+    height: 200px;
+    width: 300px;
+    font-family: 'Righteous';
+    color: #ED692E;
+    font-size: 16px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+#drawDialog {
+    display: flex;
+    height: 120px; 
+    width: 250px; 
+    font-family: 'Righteous';
+    color: #ED692E;
+    font-size: 20px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.restart-btn {
+    background-color: #ED692E;
+    color: white;
+    border: none;
+    width: 120px;
+    height: 35px;
+    font-family: 'Roboto';
+    font-size: 16px;
+    border-radius: 5px; 
+}
+
+.player-info {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.player-mark {
+    display: flex;
+    font-size: 22px;
+    font-family: 'Righteous';
+}
